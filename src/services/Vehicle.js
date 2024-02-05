@@ -5,7 +5,9 @@ const API_URL_REGISTER = "http://localhost:8080/api/vehiculos"
 
 const getVehicles = async(size) =>{
     try{
-        const response = await axios.post(API_URL, {size: size})
+        const response = await axios.post(API_URL,{
+            params: {size}
+        })
         return response.data
     }catch(err){
         console.log(err)

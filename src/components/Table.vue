@@ -35,7 +35,7 @@ export default {
             vehicles: [],
         }
     },
-    mounted(){
+    mounted() {
         this.getVehicles()
     },
     computed: {
@@ -44,11 +44,13 @@ export default {
         }
     },
     methods: {
-        async getVehicles(){
-            try{
-                const data = await vehicleService.getVehicles()
+        async getVehicles() {
+            try {
+                const data = await vehicleService.getVehicles(
+                    parseInt(this.perPage)
+                )
                 this.vehicles = data.content
-            }catch(err){
+            } catch (err) {
                 console.log(err)
             }
         }

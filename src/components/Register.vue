@@ -112,6 +112,8 @@ export default {
                     }
                     )
             }
+
+            e.preventDefault();
         },
         onReset: function (e) {
             this.form.model = '';
