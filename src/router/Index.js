@@ -17,7 +17,7 @@ const routes = [
                 component: () => import("../components/Register.vue")
             },
             {
-                path: "/form/table",
+                path: "/table",
                 name: "table",
                 component: () => import("../components/Table.vue")
             }

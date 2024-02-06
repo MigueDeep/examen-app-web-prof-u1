@@ -4,6 +4,7 @@
         <hr>
         <b-link :to="{ name: 'table' }">Ver tabla </b-link>
         <hr>
+        <h2>Registrar de vehiculos</h2>
         <div>
             <div class="myForm">
                 <b-form @submit="onSubmit" @reset="onReset" v-if="show" class="form-control box-form formulario">

@@ -1,5 +1,11 @@
 <script>
-
+export default {
+    computed: {
+        isHomePage() {
+            return this.$route.name === 'inicio';
+        },
+    },
+};
 </script>
 
 <template>
@@ -20,7 +26,7 @@
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0 options">
                                 <li class="nav-item">
                                     <router-link to="inicio" class="nav-link links">Inicio</router-link>
-                                </li>                                
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -29,7 +35,7 @@
 
             <!-- * Sidebar -->
             <b-row>
-                <div class="col-3">
+                <b-col>
                     <div class="sidebar">
                         <b-nav vertical class="pt-5">
                             <b-nav-item>
@@ -37,9 +43,15 @@
                             </b-nav-item>
                         </b-nav>
                     </div>
-                </div>
+                </b-col>
             </b-row>
+
             <b-col class="cont">
+                <div v-if="isHomePage" class="welcome">
+                    <h1>Bienvenido a la aplicacion!</h1>
+                    <p>Esta es la aplicacion para el examen :).</p>
+                    <img src="../assets/porsche.png" alt="imagen de un porsche">
+                </div>
                 <router-view />
             </b-col>
         </b-container>
@@ -81,7 +93,7 @@
     font-weight: 100;
 }
 
-.myLink{
+.myLink {
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
@@ -89,7 +101,14 @@
     padding: 1rem;
 }
 
-.cont{
+.cont {
+    width: 80%;
+}
+
+.welcome {
+    margin-left: 16rem;
+    padding: 2rem;
+    float: left;
     width: 80%;
 }
 </style>
